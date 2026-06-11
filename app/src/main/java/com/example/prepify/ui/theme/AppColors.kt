@@ -15,6 +15,12 @@ data class AppColors(
     val divider: Color,
     val skeleton: Color,
     val shimmer: Color,
+    val card: Color,
+    val screenBackground: Color,
+    val primaryButton: Color,
+    val onPrimaryButton: Color,
+    val inputBackground: Color,
+    val secondaryButtonBackground: Color,
     // Add more custom semantic colors here
 )
 
@@ -27,7 +33,13 @@ val LightAppColors = AppColors(
     onInfo = Color.White,
     divider = Color(0xFFEEEEEE),
     skeleton = Color(0xFFE0E0E0),
-    shimmer = Color(0xFFF5F5F5)
+    shimmer = Color(0xFFF5F5F5),
+    card = Color.White,
+    screenBackground = Color(0xFFF2F2F7),
+    primaryButton = Color(0xFF9365E2),
+    onPrimaryButton = Color.White,
+    inputBackground = Color(0xFFF2F2F7),
+    secondaryButtonBackground = Color(0xFFF2F2F7)
 )
 
 val DarkAppColors = AppColors(
@@ -39,7 +51,13 @@ val DarkAppColors = AppColors(
     onInfo = Color.Black,
     divider = Color(0xFF373737),
     skeleton = Color(0xFF424242),
-    shimmer = Color(0xFF484848)
+    shimmer = Color(0xFF484848),
+    card = Color(0xFF1C1C1E),
+    screenBackground = Color(0xFF000000),
+    primaryButton = Color(0xFF9365E2),
+    onPrimaryButton = Color.White,
+    inputBackground = Color(0xFF2C2C2E),
+    secondaryButtonBackground = Color(0xFF2C2C2E)
 )
 
 val LocalAppColors = staticCompositionLocalOf {

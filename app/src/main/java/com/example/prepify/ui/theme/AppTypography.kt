@@ -94,6 +94,7 @@ data class AppTypography(
         lineHeight = 16.sp,
         letterSpacing = 0.4.sp
     ),
+
     val labelLarge: TextStyle = TextStyle(
         fontFamily = FontFamily.Default,
         fontWeight = FontWeight.Medium,

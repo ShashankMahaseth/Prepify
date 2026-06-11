@@ -10,14 +10,14 @@ import com.example.prepify.presentation.screens.LoginScreen
 import com.example.prepify.presentation.screens.SplashScreen
 
 @Composable
-fun AppNavigation() {
+fun AppNavigation(modifier: Modifier= Modifier) {
     val backStack = rememberNavBackStack(SplashScreen)
 
     NavDisplay(
         backStack = backStack,
         entryProvider = entryProvider {
             entry<SplashScreen> {
-                SplashScreen(modifier = Modifier){
+                SplashScreen(modifier = modifier){
                     backStack.clear()
                     backStack.add(LoginScreen)
                 }
