@@ -135,3 +135,29 @@ fun PrepifyTheme(
         )
     }
 }
+
+val MaterialTheme.dimensions: AppDimensions
+    @Composable
+    @ReadOnlyComposable
+    get() = LocalAppDimensions.current
+
+val MaterialTheme.appColors: AppColors
+    @Composable
+    @ReadOnlyComposable
+    get() = LocalAppColors.current
+
+val MaterialTheme.appTypography: AppTypography
+    @Composable
+    @ReadOnlyComposable
+    get() = LocalAppTypography.current
+
+val MaterialTheme.elevation: AppElevation
+    @Composable
+    @ReadOnlyComposable
+    get() = LocalAppElevation.current
+
+val MaterialTheme.appShapes: AppShapes
+    @Composable
+    @ReadOnlyComposable
+    get() = LocalAppShapes.current
+

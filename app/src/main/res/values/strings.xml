@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Prepify</string>
     <string name="splash_screen">SplashScreen</string>
+    <string name ="google_logo">Google</string>
+    <string name="google_button_label">Continue with Google</string>
+    <string name="login_button_label">Login</string>
+
 </resources>

@@ -74,5 +74,6 @@ dependencies {
     implementation("androidx.compose.material3.adaptive:adaptive-layout:1.3.0-beta02")
     implementation("androidx.compose.material3.adaptive:adaptive-navigation:1.3.0-beta02")
     implementation("androidx.compose.material3.adaptive:adaptive-navigation3:1.3.0-beta02")
-
+    implementation(libs.icons.lucide)
+    implementation(libs.androidx.compose.material.icons.extended)
 }

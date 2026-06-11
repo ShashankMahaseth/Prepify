@@ -18,11 +18,14 @@ data class AppDimensions(
 
     // Component specific
     val buttonHeight: Dp = 56.dp,
+    val extraButtonHeight:Dp=90.dp,
     val minTouchTarget: Dp = 48.dp,
     val iconSizeSmall: Dp = 18.dp,
     val iconSizeMedium: Dp = 24.dp,
     val iconSizeLarge: Dp = 32.dp,
-    val appBarHeight: Dp = 64.dp
+    val appBarHeight: Dp = 64.dp,
+
+
 )
 
 val LocalAppDimensions = staticCompositionLocalOf { AppDimensions() }
