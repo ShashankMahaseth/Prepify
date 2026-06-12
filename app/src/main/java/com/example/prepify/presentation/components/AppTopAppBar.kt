@@ -5,19 +5,15 @@ import androidx.compose.foundation.Image
 import androidx.compose.foundation.LocalIndication
 import androidx.compose.foundation.interaction.InteractionSource
 import androidx.compose.foundation.interaction.MutableInteractionSource
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LocalContentColor
 import androidx.compose.material3.MaterialTheme
-import androidx.compose.material3.Text
-import androidx.compose.material3.TopAppBar
+import androidx.compose.material3.Surface
 import androidx.compose.material3.TopAppBarColors
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.material3.TopAppBarScrollBehavior
@@ -25,10 +21,8 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.scale
-import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.drawscope.ContentDrawScope
 import androidx.compose.ui.graphics.painter.Painter
@@ -36,69 +30,71 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.node.DelegatableNode
 import androidx.compose.ui.node.DrawModifierNode
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.style.TextOverflow
 import com.example.prepify.ui.theme.AppTheme
 import com.example.prepify.ui.theme.appColors
 import com.example.prepify.ui.theme.elevation
 import androidx.compose.foundation.IndicationNodeFactory
-
+import com.example.prepify.ui.theme.dimensions
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun AppTopAppBar(
-    modifier: Modifier = Modifier.shadow(elevation = MaterialTheme.elevation.level3),
+    modifier: Modifier = Modifier,
     title: Any? = null,
     titleModifier: Modifier = Modifier.size(AppTheme.dimensions.iconSizeMedium),
     titleTint: Color = MaterialTheme.appColors.topAppBarTitle,
     navigationIcon: Any? = null,
     navigationIconModifier: Modifier = Modifier.size(AppTheme.dimensions.iconSizeSmall),
-    navigationIconTint: Color = MaterialTheme.appColors.topAppBarIcon,
     isNavigationIconSelected: Boolean = false,
     navigationIconSelectedTint: Color = MaterialTheme.appColors.bottomNavSelected,
     navigationIconContentDescription: String? = null,
     onNavigationClick: () -> Unit = {},
     actions: @Composable RowScope.() -> Unit = {},
-    colors: TopAppBarColors = TopAppBarDefaults.topAppBarColors(
-        containerColor = MaterialTheme.colorScheme.surface,
-        titleContentColor = MaterialTheme.appColors.topAppBarTitle,
-        navigationIconContentColor = MaterialTheme.appColors.topAppBarIcon,
-        actionIconContentColor = MaterialTheme.appColors.topAppBarIcon,
-    ),
+    colors: TopAppBarColors? = null,
     scrollBehavior: TopAppBarScrollBehavior? = null,
 ) {
-    CenterAlignedTopAppBar(
+    Surface(
         modifier = modifier,
-        title = {
-            title?.let { icon ->
-                AppIcon(
-                    icon = icon,
-                    contentDescription = null,
-                    modifier = titleModifier,
-                    tint = titleTint
-                )
-            }
-        },
-        navigationIcon = {
-            navigationIcon?.let { icon ->
-                AppTopBarIconButton(
-                    onClick = onNavigationClick,
-                    isSelected = isNavigationIconSelected,
-                    selectedTint = navigationIconSelectedTint,
-                    unselectedTint = MaterialTheme.appColors.bottomNavUnselected
-                ) {
+        color = MaterialTheme.colorScheme.surface.copy(alpha = 0.98f),
+    ) {
+        CenterAlignedTopAppBar(
+            title = {
+                title?.let { icon ->
                     AppIcon(
                         icon = icon,
-                        contentDescription = navigationIconContentDescription,
-                        modifier = navigationIconModifier,
-                        tint = MaterialTheme.appColors.bottomNavUnselected
+                        contentDescription = null,
+                        modifier = titleModifier,
+                        tint = titleTint
                     )
                 }
-            }
-        },
-        actions = actions,
-        colors = colors,
-        scrollBehavior = scrollBehavior
-    )
+            },
+            navigationIcon = {
+                navigationIcon?.let { icon ->
+                    AppTopBarIconButton(
+                        onClick = onNavigationClick,
+                        isSelected = isNavigationIconSelected,
+                        selectedTint = navigationIconSelectedTint,
+                        unselectedTint = MaterialTheme.appColors.bottomNavUnselected
+                    ) {
+                        AppIcon(
+                            icon = icon,
+                            contentDescription = navigationIconContentDescription,
+                            modifier = navigationIconModifier,
+                            tint = MaterialTheme.appColors.bottomNavUnselected
+                        )
+                    }
+                }
+            },
+            actions = actions,
+            colors = colors ?: TopAppBarDefaults.centerAlignedTopAppBarColors(
+                containerColor = Color.Transparent, // Surface handles the color
+                titleContentColor = MaterialTheme.appColors.topAppBarTitle,
+                navigationIconContentColor = MaterialTheme.appColors.topAppBarIcon,
+                actionIconContentColor = MaterialTheme.appColors.topAppBarIcon,
+            ),
+            scrollBehavior = scrollBehavior
+        )
+    }
 }
 
 @Composable

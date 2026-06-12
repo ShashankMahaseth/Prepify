@@ -60,7 +60,7 @@ fun LoginScreen(onNavigateToHome: () -> Unit) {
             modifier = Modifier.padding(MaterialTheme.dimensions.medium),
             shape = MaterialTheme.appShapes.medium,
             colors = CardDefaults.cardColors(
-                containerColor = MaterialTheme.appColors.card
+                containerColor = MaterialTheme.colorScheme.surfaceContainerLowest
             ),
             elevation = CardDefaults.cardElevation(
                 defaultElevation = MaterialTheme.elevation.card

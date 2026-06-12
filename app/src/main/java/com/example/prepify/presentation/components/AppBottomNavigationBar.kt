@@ -50,23 +50,24 @@ fun AppBottomNavigationBar(
 ) {
     val selectedGradient = Brush.linearGradient(
         colors = listOf(
-            Color(0xFF191970), // Deep Blue
-            Color(0xFF800080), // Dark Purple
-            Color(0xFF8B008B), // Dark Magenta
-            Color(0xFFFF00FF), // Magenta
-            Color(0xFFDDA0DD)  // Light Purple
+            Color(0xFF800080),
+            Color(0xFF8B008B),
+            Color(0xFFFF00FF),
+            Color(0xFFDDA0DD)
         )
     )
 
     NavigationBar(
         modifier = modifier,
         contentColor = MaterialTheme.colorScheme.onSurface,
-        tonalElevation = MaterialTheme.dimensions.medium
+        tonalElevation = MaterialTheme.dimensions.medium,
+        containerColor = MaterialTheme.colorScheme.surfaceContainerLowest
     ) {
         items.forEach { item ->
             val isSelected = currentDestination == item.destination
 
             NavigationBarItem(
+
                 selected = isSelected,
                 onClick = { onItemClick(item) },
                 icon = {
