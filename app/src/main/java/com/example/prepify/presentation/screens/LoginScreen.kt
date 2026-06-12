@@ -7,8 +7,10 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
@@ -53,6 +55,7 @@ fun LoginScreen(onNavigateToHome: () -> Unit) {
     val focusManager = LocalFocusManager.current
 
     Box(modifier = Modifier.fillMaxSize(), contentAlignment = Alignment.Center) {
+
         Card(
             modifier = Modifier.padding(MaterialTheme.dimensions.medium),
             shape = MaterialTheme.appShapes.medium,
@@ -171,7 +174,7 @@ fun LoginScreen(onNavigateToHome: () -> Unit) {
                         ),
                     containerColor = MaterialTheme.appColors.primaryButton,
                     contentColor = MaterialTheme.appColors.onPrimaryButton,
-                    
+
                 )
 
             }

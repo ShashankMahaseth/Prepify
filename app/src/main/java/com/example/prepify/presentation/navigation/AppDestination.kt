@@ -10,3 +10,15 @@ object LoginScreen : NavKey
 
 @Serializable
 object HomeScreen: NavKey
+
+@Serializable
+object CommunityScreen: NavKey
+
+@Serializable
+object PremiumScreen: NavKey
+
+@Serializable
+object AlarmScreen: NavKey
+
+@Serializable
+object SettingsScreen: NavKey

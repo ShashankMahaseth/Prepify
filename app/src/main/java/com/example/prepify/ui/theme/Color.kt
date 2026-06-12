@@ -38,6 +38,9 @@ val OnPrimaryDark = Color(0xFF003258)
 val PrimaryContainerDark = Color(0xFF00497D)
 val OnPrimaryContainerDark = Color(0xFFD1E4FF)
 
+// Diamond/Premium Colors
+val DiamondPurple = Color(0xFF990FED)
+
 val SecondaryDark = Color(0xFFBBC7DB)
 val OnSecondaryDark = Color(0xFF253140)
 val SecondaryContainerDark = Color(0xFF3B4858)
