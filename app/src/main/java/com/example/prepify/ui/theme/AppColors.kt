@@ -21,7 +21,10 @@ data class AppColors(
     val onPrimaryButton: Color,
     val inputBackground: Color,
     val secondaryButtonBackground: Color,
-    // Add more custom semantic colors here
+    val bottomNavSelected: Color,
+    val bottomNavUnselected: Color,
+    val topAppBarIcon: Color,
+    val topAppBarTitle: Color,
 )
 
 val LightAppColors = AppColors(
@@ -39,7 +42,11 @@ val LightAppColors = AppColors(
     primaryButton = Color(0xFF9365E2),
     onPrimaryButton = Color.White,
     inputBackground = Color(0xFFF2F2F7),
-    secondaryButtonBackground = Color(0xFFF2F2F7)
+    secondaryButtonBackground = Color(0xFFF2F2F7),
+    bottomNavSelected = Color(0xFF990FED), // DiamondPurple
+    bottomNavUnselected = Color(0xFF74777F),
+    topAppBarIcon = Color(0xFF990FED), // Matches bottomNavSelected
+    topAppBarTitle = Color(0xFF0061A4), // PrimaryLight
 )
 
 val DarkAppColors = AppColors(
@@ -57,7 +64,11 @@ val DarkAppColors = AppColors(
     primaryButton = Color(0xFF9365E2),
     onPrimaryButton = Color.White,
     inputBackground = Color(0xFF2C2C2E),
-    secondaryButtonBackground = Color(0xFF2C2C2E)
+    secondaryButtonBackground = Color(0xFF2C2C2E),
+    bottomNavSelected = Color(0xFFD7BEE4), // Lighter purple for dark mode
+    bottomNavUnselected = Color(0xFF8E9199),
+    topAppBarIcon = Color(0xFFD7BEE4), // Matches bottomNavSelected
+    topAppBarTitle = Color(0xFF9ECAFF), // PrimaryDark
 )
 
 val LocalAppColors = staticCompositionLocalOf {
